@@ -1,0 +1,22 @@
+# .clang-uml
+
+# Директория, где находится база данных компиляции
+compilation_database_dir: /Users/sofatitkova/Downloads/BattleShip 2
+
+# Директория для выходных диаграмм
+output_directory: diagrams
+
+# Определение диаграмм
+diagrams:
+  my_project_classes:  # Имя диаграммы
+    type: class        # Тип диаграммы (например, class, sequence и т.д.)
+    glob:              # Шаблон для поиска файлов
+      - src/*.cpp      # Путь к исходным файлам (например, все .cpp в папке src)
+      - include/*.h     # Путь к заголовочным файлам (например, все .h в папке include)
+    using_namespace: myproject  # Используемое пространство имен (если есть)
+    include:
+      namespaces:
+        - myproject    # Включаемые пространства имен
+    exclude:
+      namespaces:
+        - myproject::detail  # Исключаемые пространства имен (если есть)
